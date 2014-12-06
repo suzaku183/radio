@@ -1,0 +1,97 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+
+		link(rel="stylesheet",href="css/materialize.css",media="screen,projection")
+		link(rel="stylesheet",href="css/main.css")
+
+		//[if lt IE 9 ]><link rel="stylesheet" href="ink-ie.min.css" type="text/css"><![endif]
+
+		title= page_title
+
+		
+			
+			
+	body
+		header
+			nav
+				.nav-wrapper
+					.container
+						a(href="/",class="brand-logo") ArsNova
+						ul#nav-mobile.right.side-nav
+							li
+								a(href="/channel") Channels
+							li
+								a(href="company") Foundation
+
+						a(class="button-collapse",href="#",data-activates="nav-mobile")
+							i.mdi-navigation-menu
+
+		section.container
+			article.row.margin_top
+				.col.s12.m2
+					img(src="images/logo.png",class="image")
+
+					ul.side_nav
+						li#foundation 概要
+						li#team チーム
+						li#other その他
+				
+				.col.s12.m10
+					.row.margin_top
+						h1.header 感謝の言葉
+						.col.s12
+							.card-panel.teal
+								span.white-text メジャーな世界に目を向けなければ本当に素晴らしい”アーティスト”が数多くいるのが音楽という世界です。実際、2012年の夏のなんばハッチで見た”うねぎまり”さんのライブは最高でした。ライブだけじゃなく、実際に話してみても面白く、とてもよい人柄で音楽と向き合う真摯な姿をもっと多くの人に気軽に伝えたいと思いこのサービスを立ち上げました。あれから2年以上の歳月を経ることにはなりましたが（当時はHTMLさえ理解できなかった笑）オープニングメンバーにうねぎまりさんと高校時代の同級生を迎えてサービスを始められる幸運と”うねぎまりさん”、リスナーの皆さん、スタッフと本サービスに関わる全ての人の前途に幸多からんことを祈ってここに述べさせていただきます。
+
+
+					.row.margin_top
+						h1.header 概要
+						p このウェブサイトとラジオ番組は司会進行を務める”ゆうじくん”によって制作、運営されています。
+						p 現在本サービスは運営スタッフの人数が製作者と音響（不定期）のみで運営されております。ですので音声が途切れてしまったりといったアクシデントが発生する場合もございます。申し訳ありませんがご容赦いただければ幸いです。
+						p 当サイトでは常に新しいコーナーを募集しております。好きなパーソナリティ、またはゲストさんに対して質問してみたいこと、挑戦してほしいことなどございましたら当サイトへメールにてお知らせいただけましたら幸いでございます。
+						p なお、当サイトは個人の小さな資金力で運営できるようウェブ用のP2Pを元にして サービスを設計しております。最新規格ではございますがW3Cの制式採用から漏れてしまった場合、別の手段に移行してサービスを再開するのに時間を要する 場合がございます。
+						p このサービスへの技術協力をしたいという方がいらっしゃいましたらぜひメールにてお知らせいただけましたらと思います。
+						p どうぞ宜しくお願い致します。
+					
+					.row.margin_top
+						h1.header チーム
+						
+						.col.s12.m6
+							.card
+								.card-image
+									img(src="images/air.jpg")
+									span.card-title ゆうじ
+								.card-content
+									p このウェブ・サービスの作成から構成,作曲,司会となんでもこなす天然パーマ
+
+						.col.s12.m6
+							.card
+								.card-image
+									img(src="images/potential.jpg")
+									span.card-title まさおみくん
+								.card-content
+									p 専門学校で音響を学んだゆうじくんのフェイバリットライトアームである。ストレートヘア
+
+						.col.s12.m6
+							.card.small
+								.card-image
+									img(src="images/mari2.jpg")
+									span.card-title うねぎまりちゃん
+								.card-content
+									p 当代随一のボーカリスト。どんな小さなステージも最高のパフォーマンスで観客を魅了する。
+								.card-action
+									a(href="http://unegi.com") Official Web Site
+									a(href="http://ameblo.jp/mari2104/") Official Blog
+					
+
+
+
+
+		script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+		script(src="/socket.io/socket.io.js")
+		script(src="js/us.js")
+		script(src="js/materialize.min.js")
+		script(src="js/main.js")
+

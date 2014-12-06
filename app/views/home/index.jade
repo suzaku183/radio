@@ -1,0 +1,49 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+
+		link(rel="stylesheet",href="css/reset.css")
+		link(rel="stylesheet",href="css/materialize.css")
+		link(rel="stylesheet",href="css/main.css")
+		
+		//[if lt IE 9 ]><link rel="stylesheet" href="ink-ie.min.css" type="text/css"><![endif]
+
+		title= page_title
+
+		
+			
+			
+	body
+		header
+			nav
+				.nav-wrapper
+					.container
+						a(href="",class="brand-logo") ArsNova
+						ul#nav-mobile.right.side-nav
+							li
+								a(href="channel") Channels
+							li
+								a(href="company") Foundation
+
+						a(class="button-collapse",href="#",data-activates="nav-mobile")
+							i.mdi-navigation-menu
+
+		section.container
+			article.row.margin_top
+				.col.s12.m2
+					img(src="images/sky.jpg",class="image")
+
+					h1.flow-text Channel
+
+				.col.s12.m10
+					.row
+						.col.s12
+							h1.header Radio Play
+				
+
+		script(src="js/jquery.js")
+		script(src="/socket.io/socket.io.js")
+		script(src="js/materialize.min.js")
+		script(src="js/audio.js")
+		script(src="js/main.js")

@@ -1,0 +1,14 @@
+{
+  "name": "Break",
+  "version": "0.0.0",
+  "description": "My original frame work",
+  "author": "suzaku183",
+	"dependencies": {
+		"hotcoffee": "*",
+		"jade": "*",
+		"node-static": "*",
+		"socket.io":"*",
+		"underscore":"*",
+		"jade-stream":"*"
+	}
+}
