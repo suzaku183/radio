@@ -27,7 +27,6 @@ write_in_log = (data) ->
 	_.each(data,(d) ->
 		date = new Date()
 		fs.appendFile('./logs/main.log', "#{date}: #{d} \n" ,'utf8',(err)->
-			#console.log "Log error #{err}"
 		)
 	)
 
@@ -103,12 +102,6 @@ app = http.createServer(handler)
 serve_io = io.listen(app)
 serve_io.sockets.on("connection",(socket) ->
 	
-
-	socket.on("send_client_message",(data)->
-		console.log data
-		serve_io.sockets.emit("send_data_from_server",data)
-	)
-
 	socket.on("audio",(data) ->
 		console.log data
 		socket.broadcast.emit("send_audio", data)
