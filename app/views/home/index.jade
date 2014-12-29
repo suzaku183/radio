@@ -4,7 +4,6 @@ html(lang="ja")
 		meta(charset="utf-8")
 		meta(name="viewport",content="width=device-width,minimum-scale=1,maximum-scale=1")
 
-		link(rel="stylesheet",href="css/reset.css")
 		link(rel="stylesheet",href="css/materialize.css")
 		link(rel="stylesheet",href="css/main.css")
 		
@@ -16,19 +15,7 @@ html(lang="ja")
 			
 			
 	body
-		header
-			nav
-				.nav-wrapper
-					.container
-						a(href="",class="brand-logo") ArsNova
-						ul#nav-mobile.right.side-nav
-							li
-								a(href="channel") Channels
-							li
-								a(href="company") Foundation
-
-						a(class="button-collapse",href="#",data-activates="nav-mobile")
-							i.mdi-navigation-menu
+		include ../parts/header
 
 		section.container
 			article.row.margin_top
@@ -40,7 +27,7 @@ html(lang="ja")
 				.col.s12.m10
 					.row
 						.col.s12
-							h1.header Radio Play
+							h1.header Play
 				
 
 		script(src="js/jquery.js")

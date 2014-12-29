@@ -103,7 +103,7 @@ serve_io = io.listen(app)
 serve_io.sockets.on("connection",(socket) ->
 	
 	socket.on("audio",(data) ->
-		console.log data
+		#console.log data
 		socket.broadcast.emit("send_audio", data)
 	)
 	
