@@ -6,7 +6,6 @@ html(lang="ja")
 
 		link(rel="stylesheet",href="css/materialize.css")
 		
-		//[if lt IE 9 ]><link rel="stylesheet" href="ink-ie.min.css" type="text/css"><![endif]
 
 		title= page_title
 
@@ -27,6 +26,17 @@ html(lang="ja")
 					input(id="send",type="submit",class="btn",value="登録")
 					#peer_id
 					
+					.row
+						input(id="d_form", type="text")
+						input(id="d_call", type="submit")
+
+					h1 My Video
+					video(id="video",autoplay,muted)
+
+					h1 Other Video
+					video(autoplay, id="other_video")
+
+					audio#audio
 
 
 				.col.s12
@@ -35,3 +45,4 @@ html(lang="ja")
 							h1.header Play
 				
 		include ../parts/peer
+		script(src="js/peer_listen.js")

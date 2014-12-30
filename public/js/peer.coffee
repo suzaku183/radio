@@ -42,21 +42,6 @@ $ ->
 					console.log err
 			)
 
-			##これで接続が開始される
-			#conn = peer.connect(id)
-			#
-			#console.log conn
-			#	
-			##能動的に接続をしていく場合	
-			#conn.on("open",->
-			#
-			#	conn.on("data",(data)->
-			#		console.log "Recived too : #{data}"
-			#	)
-			#	
-			#	conn.send("Hello")
-			#
-			#)
 		)
 
 	)
@@ -72,6 +57,14 @@ $ ->
 			audio = document.querySelector("#audio")
 			audio.src = window.URL.createObjectURL(remote_stream)
 			audio.play()
+			
+			
+			$("#d_call").on("click",->
+				d_id = $("#d_form").val()
+				console.log "Second clicked : #{d_id}"
+
+				call = peer.call(d_id,remote_stream)
+			)
 
 			console.log remote_stream
 		)

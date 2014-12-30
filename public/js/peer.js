@@ -31,6 +31,12 @@
         audio = document.querySelector("#audio");
         audio.src = window.URL.createObjectURL(remote_stream);
         audio.play();
+        $("#d_call").on("click", function() {
+          var d_id;
+          d_id = $("#d_form").val();
+          console.log("Second clicked : " + d_id);
+          return call = peer.call(d_id, remote_stream);
+        });
         return console.log(remote_stream);
       });
     });

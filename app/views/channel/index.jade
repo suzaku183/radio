@@ -4,11 +4,7 @@ html(lang="ja")
 		meta(charset="utf-8")
 		meta(name="viewport",content="width=device-width,minimum-scale=1,maximum-scale=1")
 
-		link(rel="stylesheet",href="css/reset.css")
 		link(rel="stylesheet",href="css/materialize.css")
-		link(rel="stylesheet",href="css/main.css")
-		
-		//[if lt IE 9 ]><link rel="stylesheet" href="ink-ie.min.css" type="text/css"><![endif]
 
 		title= page_title
 
@@ -21,15 +17,17 @@ html(lang="ja")
 		section.container
 			article.row.margin_top
 				.col.s12.m2
-					img(src="images/sky.jpg",class="image")
+					img(src="images/sky.jpg",class="responsive-img")
 
 					h1.flow-text Channel
+					audio#audio
+
 
 				.col.s12.m10
 					.row
 						h1.header うねぎチャンネル
 						.col.s12.m6
-							img(src="images/mari.jpg",class="image")
+							img(src="images/mari.jpg",class="responsive-img")
 						.col.s12.m6
 							p.flow-text-jp 当代最高のヴォーカリスト”うねぎまり”ちゃんのラジオ番組！うねぎチャンネルへようこそ！
 							p.flow-text-jp 進行は私、”ゆうじくん”とメインパーソナリティの”うねぎまり”さんでお届けいたします。
@@ -38,9 +36,5 @@ html(lang="ja")
 							h3#next_on_air 12:30
 					
 
-		script(src="js/jquery.js")
-		script(src="/socket.io/socket.io.js")
-		script(src="js/us.js")
-		script(src="js/materialize.min.js")
-		script(src="js/audio_recive.js")
-		script(src="js/main.js")
+		include ../parts/peer
+		script(src="js/peer_call.js")
