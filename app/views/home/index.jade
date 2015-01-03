@@ -1,37 +1,32 @@
 doctype html
 html(lang="ja")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport",content="width=device-width,minimum-scale=1,maximum-scale=1")
-
-		link(rel="stylesheet",href="css/materialize.css")
-		
-		//[if lt IE 9 ]><link rel="stylesheet" href="ink-ie.min.css" type="text/css"><![endif]
-
-		title= page_title
-
-		
-			
-			
+	include ../parts/head
 	body
 		include ../parts/header
 
-		section.container
-			article.row.margin_top
-				.col.s12
-					img(src="images/sky.jpg",class="responsive-img")
+		.parallax-container
+			.parallax
+				img(src="http://upload.wikimedia.org/wikipedia/commons/a/ab/Red_sand_dune_in_Namibia.jpg")
+		
+		.section.white
+			.container
+				h1 Silk Road with Radio
+				p Silkはただのラジオではありません。
+				p 伝えたいと思う人と受け取りたいと思う人をつなげるサービスです。
+				p なので当サービスはシルク（絹）という名前を選びました。
+				p 千年の歴史を紡いで、繋いできたシルクにいただき
+				p 皆様をつなぎます。
 
-					h1.flow-text Channel
-
-					input(id="form_id", type="text")
-					input(id="send",type="submit",class="btn",value="登録")
-					#peer_id
-					
+		.parallax-container
+			.container
+				.card-container
 
 
-				.col.s12
-					.row
-						.col.s12
-							h1.header Play
-				
+
+		.section.white
+			.container
+				h1 みんな遊んだ糸電話と同じ方法で
+
+
+		include ../parts/footer
 		include ../parts/peer

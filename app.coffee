@@ -62,18 +62,18 @@ handler = (req,res) ->
 
 					jade.renderFile(f,r,(jade_error,html)->
 						if jade_error
-							#Write Logs
+							#エラーページのログを記述
 							write_in_log(jade_error)
 							
-							#Render of the Error page about 500
+							#エラーページ５００を表示する
 							res.writeHead(500)
 							res.write("Error from jade!")
 							res.end(err_500)
 						
-						#Write logs
+						#ログを記述
 						write_in_log([200,"Page found!"])
 
-						#Render Jade pages
+						#JADEページを表示する
 						res.writeHead(200,{"Content-Type":"text/html"})
 						res.end(html)
 					)
