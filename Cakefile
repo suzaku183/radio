@@ -1,5 +1,6 @@
 _ = require "underscore"
 
+
 task "routes","Show all routings" ,->
 	routes = require "./config/routes.json"
 	for f,data of routes

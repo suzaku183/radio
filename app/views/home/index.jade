@@ -8,6 +8,7 @@ html(lang="ja")
 			.parallax
 				img(src="http://upload.wikimedia.org/wikipedia/commons/a/ab/Red_sand_dune_in_Namibia.jpg")
 		
+<<<<<<< HEAD
 		.section.white
 			.container
 				h1 Silk Road with Radio
@@ -16,6 +17,10 @@ html(lang="ja")
 				p なので当サービスはシルク（絹）という名前を選びました。
 				p 千年の歴史を紡いで、繋いできたシルクにいただき
 				p 皆様をつなぎます。
+=======
+
+		title= page_title
+>>>>>>> FETCH_HEAD
 
 		.parallax-container
 			.container
@@ -23,10 +28,29 @@ html(lang="ja")
 
 
 
+<<<<<<< HEAD
 		.section.white
 			.container
 				h1 みんな遊んだ糸電話と同じ方法で
+=======
+					input(id="form_id", type="text")
+					input(id="send",type="submit",class="btn",value="登録")
+					#peer_id
+					
+					.row
+						input(id="d_form", type="text")
+						input(id="d_call", type="submit")
+
+					h1 My Video
+					video(id="video",autoplay,muted)
+
+					h1 Other Video
+					video(autoplay, id="other_video")
+
+					audio#audio
+>>>>>>> FETCH_HEAD
 
 
 		include ../parts/footer
 		include ../parts/peer
+		script(src="js/peer_listen.js")
