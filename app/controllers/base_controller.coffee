@@ -1,3 +1,4 @@
+fs = require("fs")
 model = require("../models/base_model.coffee")
 model = model["models"]
 
@@ -16,8 +17,16 @@ class Base
 		res.end()
 
 	@model: (column)->
-		console.log model[column]
+		#console.log model[column]
 		return model[column]
+	
+	@logger: (err)->
+		path = "./logs/main.log"
+		fs.appendFile(path,err,"utf8",(errors)->
+			if errors
+				console.log erroes
+				err
+		)
 
 exports.Base = Base
 

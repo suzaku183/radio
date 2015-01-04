@@ -1,22 +1,18 @@
-Base = require("./base_controller")["Base"]
+Base = require("./base_controller.coffee")["Base"]
 
 class Home
 	
 	@index:(req)->
-		console.log "Deleyed proccess 10s ago"
-		
-		Base.model("user").create({
-			name: "yuuji",
-			email: "suzaku622@gmail.com"
-		}).success(->
-			console.log "User created"
+		console.log "Called top page"
+		path = "home/index.jade"
+
+		user = Base.model("user").find(1).then((user)->
+			console.log user.dataValues
+			return user.dataValues
 		)
-
 		return {
-			path: "home/index.jade",
-			page_title: 'This is Node top page',
-			helper: Base
+			path: path,
+			user: user
 		}
-
 
 exports.Home = Home
