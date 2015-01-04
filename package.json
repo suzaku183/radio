@@ -9,6 +9,7 @@
 		"node-static": "*",
 		"socket.io":"*",
 		"underscore":"*",
-		"jade-stream":"*"
+		"jade-stream":"*",
+		"sequelize": "*"
 	}
 }

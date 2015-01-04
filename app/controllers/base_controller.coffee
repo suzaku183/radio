@@ -1,3 +1,5 @@
+model = require("../models/base_model.coffee")
+model = model["models"]
 
 #すべてのクラスが継承するべきコントローラー
 class Base
@@ -13,4 +15,9 @@ class Base
 		})
 		res.end()
 
+	@model: (column)->
+		console.log model[column]
+		return model[column]
+
 exports.Base = Base
+
