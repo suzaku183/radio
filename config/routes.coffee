@@ -10,7 +10,8 @@ controllers = fs.readdirSync("#{__dirname}/../app/controllers")
 c = []
 _.each(controllers,(v,k)->
 	c_name = v.split("_")[0]
-	c[c_name] = require("../app/controllers/#{c_name}_controller")[capitalize(c_name)]
+	if !(c_name.match(/^\./))
+		c[c_name] = require("../app/controllers/#{c_name}_controller")[capitalize(c_name)]
 )
 
 

@@ -45,7 +45,7 @@ handler = (req,res) ->
 			if routes[url_path]?
 				
 				try
-					r = routes[url_path](req)
+					r = routes[url_path](res,req)
 					r.pretty = true
 				catch e
 					console.log e

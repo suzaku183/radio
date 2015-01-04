@@ -7,6 +7,10 @@ class Base
 	@create_hash:->
 		return "guivgbyo84bt5rwi782yw9dugbc478otwevxfywbowqv"
 	
-		
+	@redirect_to: (res,path) ->
+		res.writeHead(302,{
+			Location: path
+		})
+		res.end()
 
 exports.Base = Base

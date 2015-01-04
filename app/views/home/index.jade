@@ -17,30 +17,20 @@ html(lang="ja")
 				p 千年の歴史を紡いで、繋いできたシルクにいただき
 				p 皆様をつなぎます。
 
-		title= page_title
-
 		.parallax-container
-			.container
-				.card-container
-
+			.parallax
+				img(src="http://upload.wikimedia.org/wikipedia/commons/6/6a/Bosendorfer_185.JPG")
 
 
 		.section.white
 			.container
-				h1 みんな遊んだ糸電話と同じ方法で
-					input(id="form_id", type="text")
-					input(id="send",type="submit",class="btn",value="登録")
-					h1.flow-text Channel
-					#peer_id
+				h1 すべての楽器を届けたい。
+				h1 RockもOrchestraも音楽すべてを
+				#peer_id
 						
-					audio#audio
+				audio#audio
 
 
 		include ../parts/footer
-				.col.s12
-					.row
-						.col.s12
-							h1.header Play
-				
 		include ../parts/peer
 		script(src="js/peer_listen.js")

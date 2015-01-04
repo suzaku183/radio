@@ -1,10 +1,13 @@
 Base = require("./base_controller")["Base"]
 
 
-class Channel extends Base
-	@index:(req)->
-		console.log "Called channel page"
-
+class Channel
+	
+	@index:(res,req)->
+		console.log "Accessed Channel page"
+		
+		Base.redirect_to res,"/"
+		
 		return {
 			path: "channel/index.jade",
 			page_title: 'チャンネル一覧'
