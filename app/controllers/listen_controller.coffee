@@ -1,8 +1,8 @@
 
 class Listen
 
-	@index: ->
-	
+	@index:(req,res) ->
+			
 
 
 

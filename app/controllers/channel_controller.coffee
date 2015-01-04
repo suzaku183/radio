@@ -3,21 +3,17 @@ Base = require("./base_controller")["Base"]
 
 class Channel
 	
-	@index:(res,req)->
+	@index:(req,res)->
 		console.log "Accessed Channel page"
-		
 		Base.redirect_to res,"/"
-		
-		return {
-			path: "channel/index.jade",
-			page_title: 'チャンネル一覧'
-		}
+
 	
-	@mari: (req)->
-		return {
-			path: "mari/index.jade",
+	@mari: (req,res)->
+		path = "mari/index.jade"
+
+		Base.render(res,path,{
 			page_title: "うねぎまりチャンネル"
-		}
+		})
 
 
 exports.Channel = Channel

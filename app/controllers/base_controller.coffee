@@ -1,4 +1,7 @@
+jade = require "jade"
 fs = require("fs")
+route = require "../../config/routes"
+routes = route["routes"]
 model = require("../models/base_model.coffee")
 model = model["models"]
 
@@ -16,10 +19,27 @@ class Base
 		})
 		res.end()
 
+
 	@model: (column)->
 		#console.log model[column]
 		return model[column]
 	
+
+	@render: (res,path,option) ->
+		path = "#{__dirname}/../views/#{path}"
+		option.pretty = true
+		jade.renderFile(path,option,(err,html)->
+			if err
+				#エラーページのログを記述
+				console.log err
+				res.writeHead(500)
+				res.end(@err_500)
+			
+			#JADEページを表示する
+			res.writeHead(200,{"Content-Type":"text/html"})
+			res.end(html)
+		)
+
 	@logger: (err)->
 		path = "./logs/main.log"
 		fs.appendFile(path,err,"utf8",(errors)->
@@ -27,6 +47,9 @@ class Base
 				console.log erroes
 				err
 		)
+	@err_500: ->
+		fs.readFileSync("./public/500.html","utf8")
+	
 
 exports.Base = Base
 
