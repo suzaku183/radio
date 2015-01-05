@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "My original frame work",
   "author": "suzaku183",
+	"repository": {
+	"type": "git",
+	"url": "https://github.com/suzaku183/radio.git"
+	},
 	"dependencies": {
 		"hotcoffee": "*",
 		"jade": "*",
@@ -10,6 +14,7 @@
 		"socket.io":"*",
 		"underscore":"*",
 		"jade-stream":"*",
-		"sequelize": "*"
+		"sequelize": "*",
+		"mysql": "*"
 	}
 }
