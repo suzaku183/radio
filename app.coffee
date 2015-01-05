@@ -10,83 +10,31 @@ cp = require("child_process")
 route = require "./config/routes"
 routes = route["routes"]
 
-#Template engin
-jade = require "jade"
-jade_stream = require "jade-stream"
-
-
+#静的ファイルを配信するためのコード
 file_server = new ns.Server("./public",{cache: 7200})
 
-
-#Error files
+#404 not foundページを表示するための関数
 err_404 = fs.readFileSync("./public/404.html","utf8")
+#500 Server errorページを表示するための関数
 err_500 = fs.readFileSync("./public/500.html","utf8")
-
-
-write_in_log = (data) ->
-	_.each(data,(d) ->
-		date = new Date()
-		fs.appendFile('./logs/main.log', "#{date}: #{d} \n" ,'utf8',(err)->
-		)
-	)
-
-
 
 handler = (req,res) ->
 	req.addListener("end",->
 			
+		#URLを解析する
 		access_url = url.parse(req.url)
 		url_path = access_url.path
-	
-		#Logの書き込み
-		write_in_log(access_url)
 
+		#リクエストが静的ファイルサーバに存在した場合はここから返す
 		file_server.serve(req,res,(err,result) ->
 			if routes[url_path]?
-				
 				try
-					r = routes[url_path](res,req)
-					r.pretty = true
+					routes[url_path](req,res)
 				catch e
 					console.log e
-					write_in_log(["No property"])
 					res.writeHead(500)
 					res.end(err_500)
-
-				#Write Log
-				write_in_log(r)
-				
-				try
-					f = ("#{__dirname}/app/views/#{r.path}")
-					
-
-					jade.renderFile(f,r,(jade_error,html)->
-						if jade_error
-							#エラーページのログを記述
-							write_in_log(jade_error)
-							
-							#エラーページ５００を表示する
-							res.writeHead(500)
-							res.write("Error from jade!")
-							res.end(err_500)
-						
-						#ログを記述
-						write_in_log([200,"Page found!"])
-
-						#JADEページを表示する
-						res.writeHead(200,{"Content-Type":"text/html"})
-						res.end(html)
-					)
-				catch e
-					console.log e
-					write_in_log([500,"server error!"])
-					res.writeHead(500)
-					res.end(err_500)
-
 			else
-				#Write logs
-				write_in_log([404,"Page not found"])
-
 				#Render 404 page not found
 				res.writeHead(404)
 				res.end(err_404)
@@ -94,7 +42,7 @@ handler = (req,res) ->
 	).resume()
 
 
-
+#サーバーを稼働させる
 app = http.createServer(handler)
 
 
