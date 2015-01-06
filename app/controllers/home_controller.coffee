@@ -6,7 +6,7 @@ class Home
 		console.log "Called top page"
 		path = "home/index.jade"
 
-		user = Base.model("user").find(1).then((user)->
+		user = Base.model("user").find(2).then((user)->
 			Base.render(res,path,{
 				user: user.dataValues
 			},req)
