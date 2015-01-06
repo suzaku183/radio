@@ -20,7 +20,8 @@ err_500 = fs.readFileSync("./public/500.html","utf8")
 
 handler = (req,res) ->
 	req.addListener("end",->
-			
+		
+
 		#URLを解析する
 		access_url = url.parse(req.url)
 		url_path = access_url.path
