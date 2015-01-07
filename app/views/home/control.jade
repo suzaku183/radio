@@ -14,8 +14,11 @@ html(lang="ja")
 	body
 		include ../parts/header
 
+		.row
+			.container
+				button(class="btn btn-large waves-effect waves-light",id="broad_cast") 配信開始！
+					i(class="mdi-av-mic left ")
 		
 		include ../parts/footer
 		include ../parts/peer
-		include ../parts/script
-		include ../parts/call
+		script(src="/js/peer_call.js")
