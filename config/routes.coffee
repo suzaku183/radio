@@ -25,7 +25,8 @@ routes = {
 	"/channels/mari": c["channel"].mari,
 	"/users": c["user"].index,
 	"/users/new": c["user"].new,
-	"/artists/unegi": c["artist"].unegi
+	"/artists/unegi": c["artist"].unegi,
+	"/control": c["control"].index
 }
 
 
