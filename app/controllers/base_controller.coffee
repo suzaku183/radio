@@ -1,5 +1,8 @@
 jade = require "jade"
 fs = require("fs")
+fm = require("formidable")
+qs = require "querystring"
+_ = require("underscore")
 route = require "../../config/routes"
 routes = route["routes"]
 crypto = require "crypto"
@@ -17,6 +20,25 @@ class Base
 		})
 		res.end()
 	
+	#Postデータを解析する
+	@post_data: (req) ->
+		req_body = ""
+		req.on("data",(data)->
+			req_body += data
+		).on("end",->
+			console.log req_body
+		)
+		#form = new fm.IncomingForm()
+		#form.encoding = "utf-8"
+		#form.parse(data,(err,fields,file)->
+		#	if err
+		#		console.log err
+		#	else
+		#		console.log "Fields => #{fields}"
+		#		console.log "File   => #{file}"
+		#)
+
+
 	#JADEをレンダリングするメソッド
 	@render: (res,path,option) ->
 		path = "#{__dirname}/../views/#{path}"

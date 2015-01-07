@@ -6,20 +6,30 @@ User = sequelize.define("user",{
 	email: {
 		type: Sequelize.STRING,
 		unique: true
+	},
+	password: {
+		type: Sequelize.STRING,
+		allowNull: false
 	}
 })
+
 Admin = sequelize.define("admin",{
 	name: Sequelize.STRING,
 	email: {
 		type: Sequelize.STRING,
 		unique: true
 	},
-	password: Sequelize.STRING
+	password: {
+		type: Sequelize.STRING,
+		allowNull: false
+	}
 })
 
 
 
 
 
-sequelize.sync()
+sequelize.sync({
+	force: true
+})
 

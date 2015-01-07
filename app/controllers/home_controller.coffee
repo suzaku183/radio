@@ -7,9 +7,15 @@ class Home
 		path = "home/index.jade"
 
 		user = Base.model("user").find(2).then((user)->
-			Base.render(res,path,{
-				user: user.dataValues
-			},req)
+			if user?
+				Base.render(res,path,{
+					page_title: "This is top page",
+					user: user.dataValue
+				})
+			else
+				Base.render(res,path,{
+					page_title: "This is top page"
+				})
 		)
 
 exports.Home = Home
