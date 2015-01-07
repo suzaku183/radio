@@ -16,25 +16,19 @@ html(lang="ja")
 
 		section.container
 			article.row.margin_top
-				.col.s12.m2
-					img(src="images/sky.jpg",class="responsive-img")
-
-					h1.flow-text Channel
-					audio#audio
-
-
-				.col.s12.m10
+				.col.s12
 					.row
-						h1.header うねぎチャンネル
-						.col.s12.m6
-							img(src="images/mari.jpg",class="responsive-img")
-						.col.s12.m6
-							p.flow-text-jp 当代最高のヴォーカリスト”うねぎまり”ちゃんのラジオ番組！うねぎチャンネルへようこそ！
-							p.flow-text-jp 進行は私、”ゆうじくん”とメインパーソナリティの”うねぎまり”さんでお届けいたします。
-							p.flow-text-jp この番組は毎週火曜日、22:00からだいたい１時間ほどお届けしていきます！
-
-							h3#next_on_air 12:30
+						.card-panel.grey.darken-4.white-text
+							.row
+								.col.s12.m6
+									img(src="images/mari4.jpg",class="responsive-img")
+								article.col.s12.m6
+									h3 うねぎチャンネル
+									p 当代最高のヴォーカリスト”うねぎまり”ちゃんのラジオ番組！うねぎチャンネルへようこそ！
+									p 進行は私、”ゆうじくん”とメインパーソナリティの”うねぎまり”さんでお届けいたします。
+									p この番組は毎週火曜日、22:00からだいたい１時間ほどお届けしていきます！
+									a(href="/listen/#{id}",class="btn btn-large green accent-1 black-text") 配信を聴く！ 
+										i(class="mdi-av-radio left")
 					
 
-		include ../parts/peer
-		script(src="js/peer_call.js")
+		include ../parts/script

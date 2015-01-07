@@ -18,7 +18,7 @@ _.each(controllers,(v,k)->
 #下にはルーティング記述する
 routes = {
 	"/": c["home"].index,
-	"/listen": c["listen"].index,
+	"/listen/unegi": c["listen"].unegi,
 	"/privacy": c["company"].privacy,
 	"/foundation": c["company"].index,
 	"/channels": c["channel"].index,
