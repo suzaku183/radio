@@ -4,8 +4,8 @@ Base = require("./base_controller")["Base"]
 class Channel
 	
 	@index:(req,res)->
-		console.log "Accessed Channel page"
-		Base.redirect_to res,"/"
+		console.log "CHANNEL#INDEX"
+		path = "channel/index"
 
 	
 	@mari: (req,res)->

@@ -5,7 +5,7 @@ class User
 
 	@index: (req,res)->
 		console.log "USER#INDEX"
-		path = "users/index.jade"
+		path = "users/index"
 
 		if req.method == "POST"
 			console.log req.method
@@ -23,7 +23,7 @@ class User
 
 	@new: (req,res) ->
 		console.log "USER#NEW"
-		path = "users/new.jade"
+		path = "users/new"
 		Base.render(res,path,{
 			page_title: "User new page"
 		})

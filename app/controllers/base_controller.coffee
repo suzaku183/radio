@@ -41,7 +41,7 @@ class Base
 
 	#JADEをレンダリングするメソッド
 	@render: (res,path,option) ->
-		path = "#{__dirname}/../views/#{path}"
+		path = "#{__dirname}/../views/#{path}.jade"
 		option.pretty = true
 		
 		jade.renderFile(path,option,(err,html)->

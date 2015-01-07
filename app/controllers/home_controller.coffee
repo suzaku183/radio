@@ -4,7 +4,7 @@ class Home
 	
 	@index:(req,res)->
 		console.log "Called top page"
-		path = "home/index.jade"
+		path = "home/index"
 
 		user = Base.model("user").find(2).then((user)->
 			if user?
