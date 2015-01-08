@@ -3,22 +3,18 @@ Base = require("./base_controller")["Base"]
 class Company extends Base
 	
 	constructor: (req)->
-		super req
+		super(req)
 
 
-	index: (req,res)->
-		console.log "COMPANY#INDEX"
-		path = "company/index"
-		Base.render(res,path,{
+	index: ->
+		return {
 			page_title: "運営について"
-		})
+		}
 
 	
-	privacy: (req,res)->
-		console.log "COMPANY#PRIVACY"
-		path = "company/privacy"
-		Base.render(res,path,{
+	privacy: ->
+		return {
 			page_title: "プライバシーポリシー"
-		})
+		}
 
 exports.Company = Company

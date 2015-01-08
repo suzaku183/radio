@@ -6,10 +6,10 @@ class Listen extends Base
 		super(req)
 
 
-	unegi: (req,res) ->
-		Base.render(res,@path,{
+	unegi:  ->
+		return {
 			title: "うねぎまりのうねぎチャンネル！"
-		})
+		}
 			
 
 

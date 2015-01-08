@@ -6,12 +6,11 @@ class Channel extends Base
 	constructor:(req)->
 		super(req)
 
-	index:(req,res)->
-		console.log "CHANNEL#INDEX"
-		Base.render(res,@path,{
+	index:->
+		return {
 			page_title: "チャンネル一覧",
 			id: "unegi"
-		})
+		}
 	
 
 

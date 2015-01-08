@@ -41,7 +41,6 @@ router = (controller,req)->
 handler = (req,res) ->
 	req.addListener("end",->
 		
-
 		#URLを解析する
 		access_url = url.parse(req.url)
 		url_path = access_url.path
@@ -50,10 +49,19 @@ handler = (req,res) ->
 		file_server.serve(req,res,(err,result) ->
 			if routes[url_path]?
 				try
-					pd = routes[url_path]
-					render_html = router(pd[0],req)
-					render_html[pd[1]](req,res)
-					render_html = null
+					path_data = routes[url_path]
+
+					#クラスのインスタンスを作成
+					html = router(path_data[0],req)
+
+					#ビューに応じたインスタンスメソッドの呼び出し
+					option = html[path_data[1]]()
+
+					#JADEのレンダリングをする
+					html.render(res,option)
+
+					#インスタンス変数を削除する
+					html = null
 				catch e
 					console.log e
 					res.writeHead(500)

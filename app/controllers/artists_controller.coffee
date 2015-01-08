@@ -5,10 +5,10 @@ class Artists extends Base
 	constructor:(req) ->
 		super(req)
 
-	unegi: (req,res)->
-		Base.render(res,@path,{
+	unegi:->
+		return {
 			title: "うねぎまり：アーティスト紹介"
-		})
+		}
 
 
 
