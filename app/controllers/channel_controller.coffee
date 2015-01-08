@@ -3,15 +3,14 @@ Base = require("./base_controller")["Base"]
 
 class Channel extends Base
 	
-	constructor:(req)->
-		super(req)
+	constructor:(req,res)->
+		super(req,res)
 
 	index:->
-		return {
-			page_title: "チャンネル一覧",
-			id: "unegi"
-		}
-	
+		@render({
+			id: "unegi",
+			title:"Chennel page!"
+		})
 
 
 exports.Channel = Channel

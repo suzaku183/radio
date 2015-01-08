@@ -2,12 +2,11 @@ Base = require("./base_controller.coffee")["Base"]
 
 class Listen extends Base
 	
-	constructor: (req)->
-		super(req)
+	constructor: (req,res)->
+		super(req,res)
 
-
-	unegi:  ->
-		return {
+	unegi: ->
+		@render {
 			title: "うねぎまりのうねぎチャンネル！"
 		}
 			

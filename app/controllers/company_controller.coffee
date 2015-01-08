@@ -2,19 +2,18 @@ Base = require("./base_controller")["Base"]
 
 class Company extends Base
 	
-	constructor: (req)->
-		super(req)
-
+	constructor: (req,res)->
+		super(req,res)
 
 	index: ->
-		return {
-			page_title: "運営について"
+		@render  {
+			title: "運営について"
 		}
 
 	
 	privacy: ->
-		return {
-			page_title: "プライバシーポリシー"
+		@render {
+			title: "プライバシーポリシー"
 		}
 
 exports.Company = Company

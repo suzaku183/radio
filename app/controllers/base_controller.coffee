@@ -10,16 +10,27 @@ model = require("../models/base_model.coffee")["models"]
 
 #すべてのクラスが継承するべきコントローラー
 class Base
-	
-	
-	#コンストラクタにreq,resの両方を渡す
-	#両引数ともインスタンス変数にしてしまう
-	#各コントローラの引数からreq,resを消す代わりにコールバック関数を実行できるようにする
-	#コールバック関数は引数optionをひとつもちJadeのレンダリングを実行する
 
 	#Constructor
-	constructor: (@req)->
+	constructor: (@req,res)->
 		@path = _set_path(@req.url)
+
+		#Jadeをレンダリングするためのコード
+		@render = (option) ->
+			path = "#{__dirname}/../views/#{@path}.jade"
+			option.pretty = true
+			jade.renderFile(path,option,(err,html)->
+				if err
+					#エラーページのログを記述
+					console.log err
+					res.writeHead(500)
+					res.end(@err_500)
+				
+				#JADEページを表示する
+				res.writeHead(200,{"Content-Type":"text/html"})
+				res.end(html)
+			)
+
 
 	#URLからファイルパスを推測するメソッド
 	_set_path= (url)->
@@ -46,22 +57,7 @@ class Base
 
 
 	#JADEをレンダリングするメソッド
-	render: (res,option) ->
-		path = "#{__dirname}/../views/#{@path}.jade"
-		option.pretty = true
-		
-
-		jade.renderFile(path,option,(err,html)->
-			if err
-				#エラーページのログを記述
-				console.log err
-				res.writeHead(500)
-				res.end(@err_500)
-			
-			#JADEページを表示する
-			res.writeHead(200,{"Content-Type":"text/html"})
-			res.end(html)
-		)
+	@render: (option) ->
 
 
 	#暗号化するよ！

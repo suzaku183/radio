@@ -32,8 +32,8 @@ _.each(controllers,(v,k)->
 )
 
 #第一引数にクラス、第二引数にメソッドを設置することで動的に命令を呼び出す
-router = (controller,req)->
-	temp = new c[controller](req)
+router = (controller,req,res)->
+	temp = new c[controller](req,res)
 	return temp
 
 
@@ -52,13 +52,8 @@ handler = (req,res) ->
 					path_data = routes[url_path]
 
 					#クラスのインスタンスを作成
-					html = router(path_data[0],req)
-
-					#ビューに応じたインスタンスメソッドの呼び出し
-					option = html[path_data[1]]()
-
-					#JADEのレンダリングをする
-					html.render(res,option)
+					html = router(path_data[0],req,res)
+					html[path_data[1]]()
 
 					#インスタンス変数を削除する
 					html = null

@@ -3,21 +3,22 @@ formidable = require "formidable"
 url = require "url"
 qs = require "querystring"
 
+
 class Users extends Base
 	
-	constructor: (req)->
-		super(req)
+	constructor: (req,res)->
+		super(req,res)
 
-	index: (req,res)->
-		Base.render(res,@path,{
-			page_title: "This is users page"
-		})
-
-	new: (req,res) ->
-		if req.method == "GET"
-			Base.render(res,@path,{
-				page_title: "User new page"
-			})
+	index: ->
+		@render	{
+			title: "ユーザーページ"
+		}
+	
+	new: ->
+		if @req.method == "GET"
+			@render {
+				title: "User new page"
+			}
 
 		else if req.method == "POST"
 			form = new formidable.IncomingForm()
