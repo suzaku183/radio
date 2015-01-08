@@ -3,9 +3,12 @@ fs = require("fs")
 fm = require("formidable")
 qs = require "querystring"
 _ = require("underscore")
+helper = require("../helper/index.coffee")
 routes = require("../../config/routes")["routes"]
 crypto = require "crypto"
 model = require("../models/base_model.coffee")["models"]
+
+
 
 
 #すべてのクラスが継承するべきコントローラー
@@ -13,12 +16,18 @@ class Base
 
 	#Constructor
 	constructor: (@req,res)->
+		#Jadeファイルパスの設定
 		@path = _set_path(@req.url)
-
+		
 		#Jadeをレンダリングするためのコード
 		@render = (option) ->
 			path = "#{__dirname}/../views/#{@path}.jade"
 			option.pretty = true
+			
+			#View用のヘルパーメソッドです
+			option.h = new helper.Helper
+			
+			#Render本体
 			jade.renderFile(path,option,(err,html)->
 				if err
 					#エラーページのログを記述
