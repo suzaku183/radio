@@ -1,8 +1,10 @@
 Base = require("./base_controller")["Base"]
+
 class Company extends Base
 	
-	constructor: ->
-		console.log "カンパニークラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+	constructor: (req)->
+		super req
+
 
 	index: (req,res)->
 		console.log "COMPANY#INDEX"

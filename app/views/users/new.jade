@@ -8,13 +8,13 @@ html(lang="ja")
 			.col.s12
 				h1 User new
 
-				form(action="/users",method="post")
+				form(action="",method="post")
 					.input-field
 						label Name
 						input(type="text", name="name", required)
 					
 					.input-field
-						input(type="submit",value="Submit",class="btn btn-large")
+						input(type="submit",value="Submit",class="btn btn-large",id="submit_user")
 		
 
 		include ../parts/footer

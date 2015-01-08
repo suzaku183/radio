@@ -1,16 +1,13 @@
 Base = require("./base_controller.coffee")["Base"]
 
-class Listen
+class Listen extends Base
 	
-	constructor: ->
-		console.log "リッスンクラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+	constructor: (req)->
+		super(req)
 
-	index:(req,res) ->
 
 	unegi: (req,res) ->
-		path = "listen/unegi"
-
-		Base.render(res,path,{
+		Base.render(res,@path,{
 			title: "うねぎまりのうねぎチャンネル！"
 		})
 			

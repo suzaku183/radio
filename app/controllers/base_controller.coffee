@@ -13,16 +13,16 @@ model = model["models"]
 #すべてのクラスが継承するべきコントローラー
 class Base
 	
+	_path = ""
+
 	#Constructor
 	constructor: (req)->
-		#console.log "親クラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
-
+		@path = _set_path(req.url)
 
 	#URLからファイルパスを推測するメソッド
-	@set_path: (req)->
-		console.log "This is test function"
-
-
+	_set_path= (url)->
+		return "#{routes[url][0]}/#{routes[url][1]}"
+		
 
 	#第一引数に与えられたパスにジャンプする
 	@redirect: (path,res) ->

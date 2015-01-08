@@ -32,9 +32,9 @@ _.each(controllers,(v,k)->
 )
 
 #第一引数にクラス、第二引数にメソッドを設置することで動的に命令を呼び出す
-router = (controller,method,req)->
+router = (controller,req)->
 	temp = new c[controller](req)
-	return temp[method]
+	return temp
 
 
 #メインの処理区画
@@ -51,8 +51,8 @@ handler = (req,res) ->
 			if routes[url_path]?
 				try
 					pd = routes[url_path]
-					render_html = router(pd[0],pd[1],req)
-					render_html(req,res)
+					render_html = router(pd[0],req)
+					render_html[pd[1]](req,res)
 					render_html = null
 				catch e
 					console.log e

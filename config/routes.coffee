@@ -18,11 +18,11 @@ routes = {
 	"/listen/unegi": ["listen","unegi"],
 
 
-	"/users": ["user","index"],
-	"/users/new": ["user","new"],
+	"/users": ["users","index"],
+	"/users/new": ["users","new"],
 	
 
-	"/artists/unegi": ["artist","unegi"],
+	"/artists/unegi": ["artists","unegi"],
 
 	
 	"/control": ["control","index"]
