@@ -12,6 +12,17 @@ model = model["models"]
 
 #すべてのクラスが継承するべきコントローラー
 class Base
+	
+	#Constructor
+	constructor: (req)->
+		console.log "親クラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+
+
+	#URLからファイルパスを推測するメソッド
+	@set_path: (req)->
+		console.log "This is test function"
+
+
 
 	#第一引数に与えられたパスにジャンプする
 	@redirect: (path,res) ->
@@ -19,7 +30,9 @@ class Base
 			Location: path
 		})
 		res.end()
-	
+
+
+
 	#Postデータを解析する
 	@post_data: (req) ->
 		req_body = ""
@@ -28,15 +41,6 @@ class Base
 		).on("end",->
 			console.log req_body
 		)
-		#form = new fm.IncomingForm()
-		#form.encoding = "utf-8"
-		#form.parse(data,(err,fields,file)->
-		#	if err
-		#		console.log err
-		#	else
-		#		console.log "Fields => #{fields}"
-		#		console.log "File   => #{file}"
-		#)
 
 
 	#JADEをレンダリングするメソッド

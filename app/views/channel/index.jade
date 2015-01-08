@@ -24,18 +24,19 @@ html(lang="ja")
 									img(src="images/mari4.jpg",class="responsive-img")
 								article.col.s12.m6
 									h3 うねぎチャンネル
-									p 当代最高のヴォーカリスト”うねぎまり”ちゃんのラジオ番組！うねぎチャンネルへようこそ！
+									p クレイジーなボーカル”うねぎまり”ちゃんのラジオ番組！うねぎチャンネルへようこそ！
 									p 進行は私、”ゆうじくん”とメインパーソナリティの”うねぎまり”さんでお届けいたします。
 									p この番組は毎週火曜日、22:00からだいたい１時間ほどお届けしていきます！
 
-									.row
-										.container
-											.col.s12
-												a(href="/listen/#{id}",class="btn btn-large green accent-1 black-text") 配信を聴く！ 
-													i(class="mdi-av-radio left")
-											.col.s12
-												a(href="/artists/unegi",class="btn btn-large pink lighten-1 white-text") うねぎまりちゃんについて
-													i(class="mdi-action-favorite-outline left")
-		
+									.col.s6
+										a(href="/listen/#{id}",class="btn btn-large green accent-1 black-text") 配信を聴く！ 
+											i(class="mdi-av-radio left")
+									.col.s6
+										a(href="http://unegi.com",class="btn btn-large pink lighten-1 white-text") Webサイト
+											i(class="mdi-hardware-desktop-mac left")
+									.col.s12
+										a(href="/artists/unegi",class="btn btn-large light-blue lighten-3") うねぎまり？
+											i(class="mdi-action-favorite-outline left")
+
 		include ../parts/footer
 		include ../parts/script

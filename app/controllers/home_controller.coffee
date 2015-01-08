@@ -1,9 +1,13 @@
 Base = require("./base_controller.coffee")["Base"]
 
-class Home
+class Home extends Base
 	
-	@index:(req,res)->
-		console.log "Called top page"
+	constructor: (req)->
+		super(req)
+		console.log "小クラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+
+	index: (req,res)->
+		console.log "HOME#INDEX"
 		path = "home/index"
 
 		user = Base.model("user").find(2).then((user)->
@@ -17,5 +21,8 @@ class Home
 					page_title: "This is top page"
 				})
 		)
+
+
+		
 
 exports.Home = Home

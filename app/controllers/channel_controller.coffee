@@ -3,7 +3,10 @@ Base = require("./base_controller")["Base"]
 
 class Channel
 	
-	@index:(req,res)->
+	constructor: ->
+		console.log "チャンネルクラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+
+	index:(req,res)->
 		console.log "CHANNEL#INDEX"
 		path = "channel/index"
 		Base.render(res,path,{
@@ -11,7 +14,7 @@ class Channel
 			id: "unegi"
 		})
 	
-	@mari: (req,res)->
+	mari: (req,res)->
 		path = "mari/index.jade"
 
 		Base.render(res,path,{
