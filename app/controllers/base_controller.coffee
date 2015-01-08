@@ -15,7 +15,7 @@ class Base
 	
 	#Constructor
 	constructor: (req)->
-		console.log "親クラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
+		#console.log "親クラスのコンストラクタが呼ばれたよ(´・ω・`)？`)"
 
 
 	#URLからファイルパスを推測するメソッド
