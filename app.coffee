@@ -57,11 +57,11 @@ ns_file_server = (req,res,url_path,posts)->
 
 #メインの処理区画
 handler = (req,res) ->
-		
+
 	#URLを解析する
 	access_url = url.parse(req.url)
 	url_path = access_url.path
-
+	
 	switch req.method
 		when "GET"
 			req.on("end",->
@@ -69,20 +69,18 @@ handler = (req,res) ->
 			).resume()
 
 		when "POST"
-			body = ""
+			d = ""
 			req.on("data",(data)->
-				body += data
+				d += data
 			).on("end",->
-				#オブジェクトの取り出し
-				query = qs.parse(body)
-
-				ns_file_server(req,res,url_path,query)
+				posts = qs.parse(d)
+				ns_file_server(req,res,url_path,posts)
 			).resume()
-
 		else
-			console.log "HTML METHOD Error!!"
+			console.log "未定義のHTML METHODでアクセスしてきました"
+			helper.e500()
 
-
+	
 #サーバーを稼働させる
 app = http.createServer(handler)
 

@@ -1,8 +1,4 @@
 Base = require("./base_controller.coffee")["Base"]
-formidable = require "formidable"
-url = require "url"
-qs = require "querystring"
-
 
 class Users extends Base
 	
@@ -15,7 +11,7 @@ class Users extends Base
 		}
 	
 	create: (query)->
-		console.log	query
+		console.log query
 		@redirect("/")
 
 	new: ->
