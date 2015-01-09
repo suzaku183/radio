@@ -14,17 +14,14 @@ class Users extends Base
 			title: "ユーザーページ"
 		}
 	
-	new: ->
-		if @req.method == "GET"
-			@render {
-				title: "User new page"
-			}
+	create: (query)->
+		console.log	query
+		@redirect("/")
 
-		else if req.method == "POST"
-			form = new formidable.IncomingForm()
-			form.parse(req,(err,fields,files)->
-				console.log files
-			)
+	new: ->
+		@render {
+			title: "NEW"
+		}
 
 
 

@@ -39,6 +39,20 @@ class Base
 				res.writeHead(200,{"Content-Type":"text/html"})
 				res.end(html)
 			)
+		
+		#POSTを解析する
+		@post = ->
+			@req.on("data",(data)->
+				console.log data
+			)
+
+
+		#第一引数に与えられたパスにジャンプする
+		@redirect= (path) ->
+			res.writeHead(302,{
+				Location: path
+			})
+			res.end()
 
 
 	#URLからファイルパスを推測するメソッド
@@ -46,12 +60,6 @@ class Base
 		return "#{routes[url][0]}/#{routes[url][1]}"
 		
 
-	#第一引数に与えられたパスにジャンプする
-	@redirect: (path,res) ->
-		res.writeHead(302,{
-			Location: path
-		})
-		res.end()
 
 
 

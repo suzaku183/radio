@@ -20,6 +20,7 @@ routes = {
 
 	"/users": ["users","index"],
 	"/users/new": ["users","new"],
+	"/users/create": ["users","create"],
 	
 
 	"/artists/unegi": ["artists","unegi"],

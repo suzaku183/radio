@@ -2,11 +2,11 @@ Base = require("./base_controller.coffee")["Base"]
 
 class Artists extends Base
 	
-	constructor:(req) ->
-		super(req)
+	constructor:(req,res) ->
+		super(req,res)
 
 	unegi:->
-		return {
+		@render {
 			title: "うねぎまり：アーティスト紹介"
 		}
 
