@@ -1,0 +1,22 @@
+doctype html
+html
+	include ../parts/head
+	body
+		include ../parts/header
+
+		.row
+			.container
+				.col.s12
+					form(action="/users/sign_in",method="POST")
+						.input-field
+							label Email
+							input(type="email",name="email")
+						.input-field
+							label Password
+							input(type="password",name="password")
+						.input-field
+							input(type="submit",value="Login")
+
+
+		include ../parts/footer						
+		include ../parts/script

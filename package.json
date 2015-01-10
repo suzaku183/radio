@@ -15,6 +15,7 @@
 		"underscore":"*",
 		"jade-stream":"*",
 		"sequelize": "*",
-		"mysql": "*"
+		"mysql": "*",
+		"cookie": "*"
 	}
 }

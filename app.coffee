@@ -6,6 +6,7 @@ path = require "path"
 url = require "url"
 ns = require "node-static"
 io = require "socket.io"
+cookie = require("cookie")
 cp = require("child_process")
 qs = require("querystring")
 route = require "./config/routes"
@@ -29,8 +30,9 @@ _.each(controllers,(v,k)->
 
 #Node-staticの処理をまとめた関数
 ns_file_server = (req,res,url_path,posts)->
-	helper.request_debug(req)
-
+	#Server用のHELPERクラス
+	#helper.request_debug(req)
+	
 	#リクエストが静的ファイルサーバに存在した場合はここから返す
 	file_server.serve(req,res,(err,result) ->
 	
@@ -62,12 +64,12 @@ handler = (req,res) ->
 	access_url = url.parse(req.url)
 	url_path = access_url.path
 	
+	#改善策があれば短くしたいと思う
 	switch req.method
 		when "GET"
 			req.on("end",->
 				ns_file_server(req,res,url_path)
 			).resume()
-
 		when "POST"
 			d = ""
 			req.on("data",(data)->
@@ -104,5 +106,5 @@ serve_io.sockets.on("connection",(socket) ->
 
 #Server runging command
 app.listen(3000)
-console.log "Server is runnging"
+console.log "щ(ﾟдﾟщ)ｶﾓｰﾝ"
 

@@ -8,16 +8,23 @@ html(lang="ja")
 			.col.s12
 				h1 User new
 
-				form(method="post",action="/users/create")
+				form(method="post")
 					.input-field
 						label Name
 						input(type="text", name="name", required)
-					
+					.input-field
+						label Email
+						input(type="email", name="email", required)
+					.input-field
+						label Password
+						input(type="password", name="password", required)
+					.input-field
+						label Password Confirm
+						input(type="password", name="password_confirm", required)
 					.input-field
 						input(type="submit",value="Submit",class="btn btn-large",id="submit_user")
 		
-
 		include ../parts/footer
-		include ../parts/peer
-		script(src="js/peer_listen.js")
+		include ../parts/script
+		include ../parts/secure
 	

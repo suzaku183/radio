@@ -2,10 +2,14 @@ Sequelize = require('sequelize')
 sequelize = require("../config/db.coffee")["sequelize"]
 
 User = sequelize.define("user",{
-	name: Sequelize.STRING,
+	name: {
+		type: Sequelize.STRING,
+		allowNull: false
+	},
 	email: {
 		type: Sequelize.STRING,
-		unique: true
+		unique: true,
+		allowNull: false
 	},
 	password: {
 		type: Sequelize.STRING,
@@ -14,10 +18,14 @@ User = sequelize.define("user",{
 })
 
 Admin = sequelize.define("admin",{
-	name: Sequelize.STRING,
+	name: {
+		type: Sequelize.STRING,
+		allowNull: false
+	},
 	email: {
 		type: Sequelize.STRING,
-		unique: true
+		unique: true,
+		allowNull: false
 	},
 	password: {
 		type: Sequelize.STRING,

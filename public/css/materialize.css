@@ -1628,6 +1628,7 @@
  */
 html {
   font-family: sans-serif;
+  font-weight: thin;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */

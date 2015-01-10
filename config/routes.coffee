@@ -21,7 +21,8 @@ routes = {
 	"/users": ["users","index"],
 	"/users/new": ["users","new"],
 	"/users/create": ["users","create"],
-	
+	"/users/login": ["users","login"],
+	"/users/sign_in": ["users","sign_in"],
 
 	"/artists/unegi": ["artists","unegi"],
 

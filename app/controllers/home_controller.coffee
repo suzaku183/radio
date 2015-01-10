@@ -6,9 +6,11 @@ class Home extends Base
 	constructor: (req,res)->
 		super(req,res)
 		
+		
 	index: ->
+		console.log @cookie.user
 		@render({
-			title: "PAGE TOP NEW"
+			title: "夏風車 (*´∀｀*)"
 		})
 
 exports.Home = Home
