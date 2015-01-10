@@ -16,6 +16,7 @@
 		"jade-stream":"*",
 		"sequelize": "*",
 		"mysql": "*",
-		"cookie": "*"
+		"cookie": "*",
+		"forever": "*"
 	}
 }
