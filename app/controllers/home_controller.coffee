@@ -8,7 +8,8 @@ class Home extends Base
 		
 		
 	index: ->
-		console.log @cookie.user
+
+			
 		@render({
 			title: "夏風車 (*´∀｀*)"
 		})
