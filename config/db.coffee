@@ -1,2 +1,4 @@
+conf = require("config")
+
 Sequelize = require "sequelize"
-exports.sequelize = new Sequelize('radio', "suzaku", 'lancelot183')
+exports.sequelize = new Sequelize(conf.mysql.db_name, conf.mysql.user,conf.mysql.password)
