@@ -1,0 +1,8 @@
+{
+
+	"mysql": {
+		"user": "suzaku",
+		"password": "lancelot183",
+		"db_name": "radio"
+	}
+}

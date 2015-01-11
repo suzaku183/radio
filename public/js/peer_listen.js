@@ -5,11 +5,12 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
     play = $("#play");
     peer = new Peer({
-      key: "ca99fd4a-8e43-11e4-b490-ff1e952f2799"
+      key: '6165842a-5c0d-11e3-b514-75d3313b9d05'
     });
     socket = io.connect();
+    console.log(util.supports.data);
     return peer.on("open", function(id) {
-      console.log(id);
+      console.log("お客様のIDは" + id + "です");
       return play.on("click", function() {
         console.log("Clicked");
         socket.emit("call", id);
