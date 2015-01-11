@@ -8,10 +8,6 @@ class Home extends Base
 		
 		
 	index: ->
-
-			
-		@render({
-			title: "夏風車 (*´∀｀*)"
-		})
+		@render(@option)
 
 exports.Home = Home

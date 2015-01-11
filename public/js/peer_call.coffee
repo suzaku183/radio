@@ -20,11 +20,11 @@ $ ->
 		},(stream)->
 			
 			#Peerオブジェクトの生成
-			peer = new Peer({key: '6165842a-5c0d-11e3-b514-75d3313b9d05'})
+			peer = new Peer({key: 'ca99fd4a-8e43-11e4-b490-ff1e952f2799'})
 	
 			console.log "Waiting lisnener"
 			peer.on("open",(id)->
-				console.log id
+				console.log "配信者のIDは#{id}です"
 	
 				socket.on("recive_listener",(key)->
 					console.log key

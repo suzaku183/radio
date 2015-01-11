@@ -23,7 +23,13 @@ class Base
 		#Jadeファイルパスの設定
 		@path = _set_path(@req.url)
 		@cookie = _get_cookie(@req)
-		
+		@option = {
+			title: "夏風車(*´∀｀*)",
+			pretty: true,
+			canonical:"http://summer-windmill.net#{@req.url}",
+			keyword: "夏風車,summer-windmill,Webラジオ,アーティスト音楽配信",
+			description: "夏風車は和歌山県出身のクリエイター’ゆうじくん’が2010年に企画し５年の歳月を経て実現した作品です。人と芸術を技術でつなぐちょっと変わった試みです。聴いてね！"
+		}
 		
 		#Cookieをセットする
 		@set_cookie = (k,v,time=MAXTIME)->
@@ -42,9 +48,8 @@ class Base
 			return model[column]
 		
 		#Jadeをレンダリングするためのコード
-		@render = (option) ->
+		@render = (option = @option) ->
 			path = "#{__dirname}/../views/#{@path}.jade"
-			option.pretty = true
 			
 			#View用のヘルパーメソッドです
 			option.h = new helper.Helper

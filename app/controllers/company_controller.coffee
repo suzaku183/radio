@@ -6,14 +6,12 @@ class Company extends Base
 		super(req,res)
 
 	index: ->
-		@render  {
-			title: "運営について"
-		}
+		@option.title = "運営チームについて"
+		@render()
 
 	
 	privacy: ->
-		@render {
-			title: "プライバシーポリシー"
-		}
+		@option.title = "プライバシーポリシー"
+		@render()
 
 exports.Company = Company

@@ -7,10 +7,9 @@ class Channel extends Base
 		super(req,res)
 
 	index:->
-		@render({
-			id: "unegi",
-			title:"Chennel page!"
-		})
+		@option.id = "unegi"
+		@option.title += "チャンネル"
+		@render(@option)
 
 
 exports.Channel = Channel
