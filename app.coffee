@@ -11,6 +11,7 @@ cp = require("child_process")
 qs = require("querystring")
 route = require "./config/routes"
 routes = route["routes"]
+conf = require("config")
 helper = new (require("./lib/helper.coffee"))["Helper"]
 
 
@@ -107,4 +108,3 @@ serve_io.sockets.on("connection",(socket) ->
 #Server runging command
 app.listen(80)
 console.log "щ(ﾟдﾟщ)ｶﾓｰﾝ"
-

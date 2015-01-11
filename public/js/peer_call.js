@@ -12,7 +12,7 @@
       }, function(stream) {
         var peer;
         peer = new Peer({
-          key: "ca99fd4a-8e43-11e4-b490-ff1e952f2799"
+          key: '6165842a-5c0d-11e3-b514-75d3313b9d05'
         });
         console.log("Waiting lisnener");
         return peer.on("open", function(id) {
