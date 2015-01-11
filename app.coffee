@@ -92,17 +92,33 @@ app = http.createServer(handler)
 serve_io = io.listen(app)
 serve_io.sockets.on("connection",(socket) ->
 	
+	#音声を送る　消してはいけない
 	socket.on("audio",(data) ->
 		console.log data
 		socket.broadcast.emit("send_audio", data)
 	)
 	
+	#配信を開始する　消しては行けない
 	socket.on("call",(id)->
 		console.log id
 		socket.broadcast.emit("recive_listener",id)
 	)
 
 	
+	#配信が始まったタイミングでユーザーのページにリッスンボタンを設置する
+	socket.on("start_radio",(data)->
+		socket.broadcast.emit("started_radio",data)
+	)
+	
+	#すでにラジオが配信されているか確認する
+	socket.on("was_started_radio",(data)->
+		socket.broadcast.emit("check_deliver_radio",true)
+	)
+
+	#管理ページにいるデバイスがある場合配信中かどうかの定義ファイルを返信する
+	socket.on("answer_radio_propery",(data)->
+		socket.broadcast.emit("radio_propety",data)
+	)
 )
 
 #Server runging command
