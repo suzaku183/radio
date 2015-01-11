@@ -1,2 +1,2 @@
 Sequelize = require "sequelize"
-exports.sequelize = new Sequelize('radio', "suzaku", 'lancelot183')
+exports.sequelize = new Sequelize('radio', "suzaku", 'Lancelot183')
