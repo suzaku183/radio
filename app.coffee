@@ -122,5 +122,5 @@ serve_io.sockets.on("connection",(socket) ->
 )
 
 #Server runging command
-app.listen(3000)
+app.listen(80)
 console.log "щ(ﾟдﾟщ)ｶﾓｰﾝ"
