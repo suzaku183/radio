@@ -1,0 +1,23 @@
+doctype html
+html(lang="ja")
+	include ../parts/head
+	link(rel="stylesheet",href="/css/top.css")
+	body
+		include ../parts/header
+
+		.container
+			.row
+				.col.s12.center
+					form(action="/control/sign_in",method="post")
+						.input-field
+							label Email
+							input(name="email",type="email",required)
+						.input-field
+							label Password
+							input(name="password",type="password",required)
+						.input-field
+							input(type="submit",class="btn btn-large teal accent-1")
+		
+		
+		include ../parts/footer
+		include ../parts/script

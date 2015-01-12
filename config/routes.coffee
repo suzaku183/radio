@@ -27,7 +27,10 @@ routes = {
 	"/artists/unegi": ["artists","unegi"],
 
 	
-	"/control": ["control","index"]
+	"/control": ["control","index"],
+	"/control/login": ["control","login"],
+	"/control/sign_in": ["control","sign_in"],
+	"/control/logout": ["control","logout"]
 }
 
 

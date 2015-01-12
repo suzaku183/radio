@@ -42,6 +42,9 @@ class Base
 			res.setHeader("Set-Cookie",cookie_data)
 			console.log "Setted cookie!"
 		
+		#Cookieを削除する
+		@delete_cookie = (k,v) =>
+
 
 		#データベースのモデルたち
 		@model= (column)->
