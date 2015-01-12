@@ -44,15 +44,15 @@ class Base
 		
 		#Cookieを削除する
 		@delete_cookie = (k,v) =>
-
+		
 
 		#データベースのモデルたち
 		@model= (column)->
 			return model[column]
 		
 		#Jadeをレンダリングするためのコード
-		@render = (option = @option) ->
-			path = "#{__dirname}/../views/#{@path}.jade"
+		@render = (option = @option,path = @path) ->
+			path = "#{__dirname}/../views/#{path}.jade"
 			
 			#View用のヘルパーメソッドです
 			option.h = new helper.Helper

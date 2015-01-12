@@ -1,0 +1,27 @@
+
+doctype html
+html(lang="ja")
+	include ../parts/head
+	meta(name="robots",content="noindex,nofollow")
+	body
+		include ../parts/header
+
+		
+		.container
+			.row
+				.col.s7
+					h5 管理ページヘようこそ
+				.col.s5
+					h5 現在ログイン中の管理者#{user.name}
+
+				.row
+					.col.s6
+						button(class="btn btn-large waves-effect waves-light",id="broad_cast") 配信開始！
+							i(class="mdi-av-mic left ")
+					
+					.col.s6
+						a(href="/control/logout",class="btn white-text right red") Logout
+
+		include ../parts/footer
+		include ../parts/peer
+		script(src="/js/peer_call.js")

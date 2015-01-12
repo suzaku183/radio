@@ -6,17 +6,28 @@ class Control extends Base
 		super req,res
 
 	index: ->
-		if @cookie?
-			console.log "Logged in"
-			@path = "home/control"
-			@render {
-				title: "管理ページ "
-			}
+		admin_mail = @cookie.admin_mail
+		render = @render
+		redirect = @redirect
+		path = "control/index"
+		
+
+		if admin_mail?
+			@model("user").find(where: {
+				email: admin_mail
+			}).then((user)->
+				if user?
+					user = user.dataValues
+					render({title:"管理ページ",user: user},path)
+				else
+					console.log "この情報は管理者のものではない"
+					redirect("/")
+			)
 		else
-			console.log "Cookie has not"
+			console.log "クッキーが無かった"
 			@redirect("/")
-			
-	
+
+
 	login: ->
 		console.log "Called login page"
 		@path = "/control/login"
@@ -27,20 +38,22 @@ class Control extends Base
 		r = @redirect
 		s_c = @set_cookie
 		mail = data.email
-
+		hash = @hash
+	
 		user = @model("user").find(where: {
-			email: data.email
+			email: data.email,
+			password: hash(data.password)
 		}).then((user)->
 			if user?
 				user = user.dataValues
-				s_c("user_mail",user.email)
+				s_c("admin_mail",user.email)
 				r("/control")
 			else
 				r("/control/login")
 		)
 
 	logout: ->
-		@cookie.user_mail = null
+		@set_cookie("admin_mail",null)
 		@redirect "/"
 
 exports.Control = Control
